@@ -1,7 +1,7 @@
 function equals(x, y) {
     if(1 / x === Infinity && 1 / y === -Infinity) {
         return false
-    } else if(Object.is(x, y)) {
+    } else if(Number.isNaN(x) && Number.isNaN(y)) {
         return true
     } else {
         return x === y
