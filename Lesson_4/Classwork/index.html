@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Work</title>
+    <script src="index.js" defer></script>
+    <style>
+      :root {
+        --main-color: #2bb372;
+        --second-color: white;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: var(--main-color);
+        color: white;
+        margin: 0;
+      }
+      .section-wrapper {
+        height: 90vh;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1600px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .section-wrapper section {
+        flex-basis: 30%;
+        border: 0.4rem solid var(--second-color);
+      }
+
+      .section-wrapper section:first-of-type {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .section-wrapper section:last-of-type {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .section-wrapper section:last-of-type input {
+        width: 1.5rem;
+        border: none;
+        border-radius: 0.7rem;
+        padding: 0.7rem 1.7rem;
+        margin: 0.5rem 0.3rem;
+      }
+
+      .white-button {
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 11px;
+        border: none;
+        background-color: var(--second-color);
+        color: var(--main-color);
+        padding: 0.7rem 1.7rem;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="section-wrapper">
+      <section>
+        <button id="toggleImage" class="white-button">Show/Hide Gif</button>
+        <img
+          src="https://media.giphy.com/media/1HPUSulSOHDpe/source.gif"
+          alt="vader"
+          id="vader"
+        />
+      </section>
+      <section>
+        <input type="number" id="num1" />
+        <div class="white-button">+</div>
+        <input type="number" id="num2" />
+        <button class="white-button" id="calculate">=</button>
+        <div class="white-button" id="result" style="margin-left: 0.3rem">
+          0
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
