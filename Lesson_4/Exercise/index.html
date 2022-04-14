@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 1</title>
+    <script src="index.js" defer></script>
+    <style>
+      :root {
+        --main-color: #2bb372;
+        --second-color: #0678be;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .main {
+        margin: 0.4rem;
+        height: 90vh;
+        display: flex;
+      }
+
+      .section-1 {
+        border: 0.3rem solid var(--main-color);
+        border-radius: 0.7rem;
+        padding: 0.3rem;
+        flex-basis: 50%;
+        margin-right: 0.3rem;
+      }
+
+      .section-1 button {
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 11px;
+        border: none;
+        padding: 0.7rem 1.7rem;
+        cursor: pointer;
+      }
+
+      .section-1 button:first-of-type {
+        background-color: var(--main-color);
+      }
+      .section-1 button:last-of-type {
+        background-color: var(--second-color);
+      }
+
+      .section-2 {
+        border: 0.3rem solid var(--second-color);
+        border-radius: 0.7rem;
+        padding: 0.3rem;
+        flex-basis: 50%;
+        font-size: 1.7rem;
+        word-wrap: break-word;
+      }
+
+      .section-2 div {
+        border: 0.2rem solid var(--second-color);
+        border-radius: 0.5rem;
+        padding: 3px;
+        margin: 4px;
+        display: inline-block;
+      }
+
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+      }
+
+      .input-wrapper input {
+        border: 0.1rem solid var(--main-color);
+        border-radius: 0.7rem;
+        padding: 0.7rem 1.7rem;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <section class="section-1">
+        <button id="add">Add Field</button>
+        <button id="convert">Convert to JSON</button>
+        <!-- მოცემული `div` ის შიგნით უნდა დაემატოს ტექსტური ველები -->
+        <div id="input-container" class="input-wrapper"></div>
+      </section>
+      <!-- მოცემულ სექციაში კი უნდა ვამატებთ კონვერტირებულ სტრინგს -->
+      <section id="destination" class="section-2"></section>
+    </main>
+  </body>
+</html>
