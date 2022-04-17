@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 1</title>
+    <script src="./ex5.js" defer></script>
+    <style>
+      :root {
+        --main-color: #2bb372;
+        --second-color: #0678be;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .main {
+        margin: 0.4rem;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+      }
+
+      .section-1 {
+        border: 0.3rem solid var(--main-color);
+        border-radius: 0.7rem;
+        padding: 0.3rem;
+        flex-basis: 70%;
+        margin-right: 0.3rem;
+      }
+
+      .section-1 button {
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 11px;
+        border: none;
+        padding: 0.7rem 1.7rem;
+        cursor: pointer;
+      }
+
+      .section-1 button:first-of-type {
+        background-color: var(--main-color);
+      }
+
+      #content {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <section class="section-1">
+        <div class="btn">
+          <button id="fetch">Fetch User</button>
+        </div>
+        <div id="content">
+          <img src="" id="img">
+          <p id="email"></p>
+          <p id="city"></p>
+          <p id="name"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
