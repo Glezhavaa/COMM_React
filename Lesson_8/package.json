@@ -1,0 +1,25 @@
+{
+  "name": "lesson_8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.js\"",
+    "dev": "parcel public/index.html",
+    "build": "parcel build public/index.html"
+  },
+  "keywords": [],
+  "author": "George",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.5.0",
+    "prettier": "^2.6.2"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
