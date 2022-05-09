@@ -32,7 +32,7 @@ function App() {
             <button
               className="button"
               key={character.height}
-              onClick={(a) => {
+              onClick={() => {
                 setMoreInfo(false);
                 setCharacterInfo(character);
               }}
