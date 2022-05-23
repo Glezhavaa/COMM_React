@@ -1,0 +1,8 @@
+.container {
+    width: 1140px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

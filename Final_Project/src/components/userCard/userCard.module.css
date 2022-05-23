@@ -1,0 +1,38 @@
+.card {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    flex-basis: 16%;
+    margin-bottom: 2rem;
+}
+
+.card p {
+    margin: 0.2rem 0;
+}
+
+.cardImg {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(28, 194, 130);
+    border: 1px solid transparent;
+}
+
+.userPhoto {
+    height: 100px;
+    width: 100px;
+}
