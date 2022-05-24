@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { parse, setToken } from "../helpers/jwt";
+import { parse, removeToken, setToken } from "../helpers/jwt";
 import { signInUser } from "../http/auth";
 
 const AuthContext = createContext({
@@ -20,6 +20,12 @@ function AuthContextProvider({ children }) {
     const { payload } = parse(token);
     setIsAuthenticated(true);
     setUser(payload);
+  }
+
+  function logOut() {
+    removeToken();
+    setIsAuthenticated(false);
+    setUser(null);
   }
 
   function failInitHandler() {
@@ -49,7 +55,7 @@ function AuthContextProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticated, isInitialized, login }}
+      value={{ user, isAuthenticated, isInitialized, login, logOut }}
     >
       {children}
     </AuthContext.Provider>

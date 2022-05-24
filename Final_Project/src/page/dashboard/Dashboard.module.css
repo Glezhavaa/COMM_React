@@ -6,3 +6,18 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+.btn {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(28, 194, 130);
+    border: 1px solid transparent;
+}

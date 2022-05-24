@@ -6,7 +6,7 @@ import ROUTES from "../config/routes";
 function AuthGuard({ children }) {
   const { isAuthenticated } = useContext(AuthContext);
   if (!isAuthenticated) {
-    return <Navigate to={ROUTES.SIGN_IN} />;
+    return <Navigate to={`/${ROUTES.SIGN_IN}`} />;
   }
   return <>{children}</>;
 }

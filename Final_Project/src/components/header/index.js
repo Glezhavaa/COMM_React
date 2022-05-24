@@ -2,8 +2,11 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 import styles from "./header.module.css";
 import ROUTES from "../../config/routes";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function Header() {
+  const {logOut} = useContext(AuthContext)
   return (
     <header>
       <nav>
@@ -28,7 +31,7 @@ function Header() {
               </li>
               <li>
                 <NavLink
-                  to={ROUTES.SEARCH}
+                  to={`/${ROUTES.SEARCH}`}
                   className={({ isActive }) =>
                     isActive ? styles.activeItem : null
                   }
@@ -41,7 +44,7 @@ function Header() {
               </li>
               <li>
                 <NavLink
-                  to={ROUTES.FAVORITES}
+                  to={`/${ROUTES.FAVORITES}`}
                   className={({ isActive }) =>
                     isActive ? styles.activeItem : null
                   }
@@ -55,7 +58,9 @@ function Header() {
             </ul>
           </div>
           <div className={styles.navButton}>
-            <button>Log Out</button>
+            <button onClick={logOut}>
+              Log Out
+            </button>
           </div>
         </div>
       </nav>

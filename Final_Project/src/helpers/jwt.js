@@ -4,6 +4,10 @@ function setToken(token) {
   localStorage.setItem("accessToken", token);
 }
 
+function removeToken() {
+  localStorage.removeItem("accessToken");
+}
+
 function parse(accessToken) {
   if (!accessToken) {
     return {
@@ -20,4 +24,4 @@ function parse(accessToken) {
     payload: decoded.payload,
   };
 }
-export { parse, setToken };
+export { parse, setToken, removeToken };

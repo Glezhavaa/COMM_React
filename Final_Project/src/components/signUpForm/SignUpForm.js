@@ -24,7 +24,6 @@ function SignUpForm() {
     e.preventDefault();
     try {
       await createNewUser(user);
-      console.log(user);
       navigate(`/${ROUTES.SIGN_IN}`);
     } catch (error) {
       console.log(error);

@@ -1,15 +1,18 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import ROUTES from "../../config/routes";
 
 function SignInForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   async function submitHandler(e) {
     e.preventDefault();
     try {
-      await login(username, password)
+      await login(username, password);
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +41,17 @@ function SignInForm() {
         />
       </label>
       <br />
-      <button onClick={submitHandler}>Sign In</button>
+      <button onClick={submitHandler} disabled={!username || !password}>
+        Sign In
+      </button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          navigate(`/${ROUTES.SIGN_UP}`);
+        }}
+      >
+        Sign Up
+      </button>
     </form>
   );
 }
