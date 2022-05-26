@@ -1,4 +1,4 @@
-import * as styles from "./dashboard.module.css";
+import * as styles from "./Dashboard.module.css";
 import UserCard from "../../components/userCard/userCard";
 import Header from "../../components/header";
 import { useContext } from "react";
@@ -8,6 +8,7 @@ function Dashboard() {
   const { gitUsers, loading, error, perPage, setPerPage } =
     useContext(UserContext);
   
+    
   return (
     <>
       <Header />
