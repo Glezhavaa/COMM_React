@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import ROUTES from "../../config/routes";
 import { useEffect, useState } from "react";
 
-function UserCard({ gitUser }) {
+const GIT_TOKEN = process.env.REACT_APP_GIT_TOKEN;
 
+function UserCard({ gitUser }) {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${gitUser.login}`, {
       headers: {
-        "Authorization": "token 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"
-      }
+        Authorization: `token ${GIT_TOKEN}`,
+      },
     })
       .then((response) => response.json())
       .then((data) => setUser(data));
   }, []);
-
 
   return (
     <div className={styles.card}>
