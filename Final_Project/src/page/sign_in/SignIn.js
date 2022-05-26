@@ -1,10 +1,13 @@
 import SignInForm from "../../components/signInForm/SignInForm";
+import styles from "./SignIn.module.css";
 
 function SignIn() {
   return (
-    <>
-      <h1>Sign In Page</h1>
-      <SignInForm />    </>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <SignInForm />
+      </div>
+    </div>
   );
 }
 

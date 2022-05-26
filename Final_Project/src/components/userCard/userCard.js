@@ -1,8 +1,23 @@
 import styles from "./userCard.module.css";
 import { Link } from "react-router-dom";
 import ROUTES from "../../config/routes";
+import { useEffect, useState } from "react";
 
-function UserCard({gitUser}) {
+function UserCard({ gitUser }) {
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${gitUser.login}`, {
+      headers: {
+        "Authorization": "token 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"
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => setUser(data));
+  }, []);
+
+
   return (
     <div className={styles.card}>
       <div className={styles.cardImg}>
@@ -13,9 +28,9 @@ function UserCard({gitUser}) {
         ></img>
       </div>
       <p>{`Username: ${gitUser.login}`}</p>
-      <p>Repositories</p>
-      <p>Followers</p>
-      <p>Following</p>
+      <p>{`Repositories: ${user.public_repos}`}</p>
+      <p>{`Followers:  ${user.followers}`}</p>
+      <p>{`Following: ${user.following}`}</p>
       <Link to={ROUTES.USER.replace(":name", `${gitUser.login}`)}>
         <button className={styles.btn}>See More</button>
       </Link>

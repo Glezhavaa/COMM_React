@@ -1,4 +1,61 @@
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.row {
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 1rem 0 ;
+    padding: .5rem 3rem;
+}
+
+.user {
+    flex: 1.5;
+    margin-top: 2rem;
+    margin-right: 4rem;
+}
+
+.bio {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.userImg {
+    display: flex;
+    justify-content: space-around;
+}
+
+.userImg img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 15rem;
+    margin-bottom: 1rem;
+}
+
+.organisations {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.organisations img {
+    height: 4rem;
+    width: 4rem;
+    margin-right: 1rem;
+}
+
+.repositories {
+    flex: 2;
+}
+
 .btn {
+    margin-top: 1rem;
     color: black;
     font-weight: 400;
     border: 1px solid black;
@@ -13,4 +70,8 @@
     color: white;
     border: 1px solid #1ee4c9;
     cursor: pointer;
+}
+
+span {
+    font-weight: 300;
 }

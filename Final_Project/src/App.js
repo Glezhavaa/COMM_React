@@ -1,9 +1,12 @@
+import { UserContextProvider } from "./context/UserContext";
 import RoutesLib from "./Routes";
 
 function App() {
   return (
     <>
-      <RoutesLib />
+      <UserContextProvider>
+        <RoutesLib />
+      </UserContextProvider>
     </>
   );
 }

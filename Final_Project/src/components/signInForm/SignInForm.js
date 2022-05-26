@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import ROUTES from "../../config/routes";
+import styles from "./SignInForm.module.css";
 
 function SignInForm() {
   const [username, setUsername] = useState("");
@@ -19,40 +20,56 @@ function SignInForm() {
   }
 
   return (
-    <form>
-      <label htmlFor="username">
-        Username
-        <input
-          id="username"
-          name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <br />
-      <label htmlFor="password">
-        Password
-        <input
-          id="password"
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <br />
-      <button onClick={submitHandler} disabled={!username || !password}>
-        Sign In
-      </button>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          navigate(`/${ROUTES.SIGN_UP}`);
-        }}
-      >
-        Sign Up
-      </button>
-    </form>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <h1 className={styles.center}>Sign In</h1>
+        <form>
+          <div className={styles.row}>
+            <label htmlFor="username">
+              Username
+              <input
+                placeholder="Username"
+                id="username"
+                name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className={styles.row}>
+            <label htmlFor="password">
+              Password
+              <input
+                placeholder="Password"
+                id="password"
+                type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+          </div>
+        </form>
+        <div className={styles.buttonBox}>
+          <button
+            className={styles.signInBtn}
+            onClick={submitHandler}
+            disabled={!username || !password}
+          >
+            Sign In
+          </button>
+          <button
+            className={styles.signInBtn}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(`/${ROUTES.SIGN_UP}`);
+            }}
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
