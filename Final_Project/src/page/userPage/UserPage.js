@@ -5,6 +5,8 @@ import styles from "./UserPage.module.css";
 import Organizations from "../../components/organizations/Organizations";
 import { useEffect, useState } from "react";
 
+const GIT_TOKEN = process.env.REACT_APP_GIT_TOKEN;
+
 function UserPage() {
   const { name } = useParams();
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ function UserPage() {
   useEffect(() => {
     fetch(`https://api.github.com/users/${name}`, {
       headers: {
-        "Authorization": "token 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",
+        Authorization: `token ${GIT_TOKEN}`,
       },
     })
       .then((response) => response.json())
@@ -24,7 +26,7 @@ function UserPage() {
   useEffect(() => {
     fetch(`https://api.github.com/users/${name}/orgs`, {
       headers: {
-        "Authorization": "token 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",
+        Authorization: `token ${GIT_TOKEN}`,
       },
     })
       .then((response) => response.json())
