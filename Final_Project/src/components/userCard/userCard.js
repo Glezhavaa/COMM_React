@@ -11,7 +11,7 @@ function UserCard({ gitUser }) {
   useEffect(() => {
     fetch(`https://api.github.com/users/${gitUser.login}`, {
       headers: {
-        Authorization: `token ${GIT_TOKEN}`,
+        "Authorization": `token ${GIT_TOKEN}`,
       },
     })
       .then((response) => response.json())
@@ -31,7 +31,7 @@ function UserCard({ gitUser }) {
       <p>{`Repositories: ${user.public_repos}`}</p>
       <p>{`Followers:  ${user.followers}`}</p>
       <p>{`Following: ${user.following}`}</p>
-      <Link to={ROUTES.USER.replace(":name", `${gitUser.login}`)}>
+      <Link to={`/${ROUTES.USER}`.replace(":name", `${gitUser.login}`)}>
         <button className={styles.btn}>See More</button>
       </Link>
     </div>

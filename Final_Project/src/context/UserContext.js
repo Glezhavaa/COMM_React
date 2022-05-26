@@ -14,7 +14,7 @@ function UserContextProvider({ children }) {
     setLoading(true);
     fetch(GIT_USER_API, {
       headers: {
-        Authorization: `token ${GIT_TOKEN}`,
+        "Authorization": `token ${GIT_TOKEN}`,
       },
     })
       .then((response) => {

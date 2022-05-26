@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import Header from "../../components/header";
+import SearchComponent from "../../components/search/Search";
+import { UserContext } from "../../context/UserContext";
+
 
 function Search() {
+  // const {gitUsers} = useContext(UserContext);
   return (
     <>
       <Header />
-      <h1>Search Page</h1>
+      <SearchComponent />
     </>
-  );
+  )
 }
 
 export default Search;
