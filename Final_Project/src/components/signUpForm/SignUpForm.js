@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../config/routes";
 import { createNewUser } from "../../http/auth";
-import styles from "../signInForm/SignInForm.module.css";
+import * as styles from "../signInForm/SignInForm.module.css";
 
 function SignUpForm() {
   const [user, setUser] = useState({

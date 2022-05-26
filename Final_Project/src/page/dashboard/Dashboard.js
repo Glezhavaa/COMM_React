@@ -1,4 +1,4 @@
-import styles from "./dashboard.module.css";
+import * as styles from "./dashboard.module.css";
 import UserCard from "../../components/userCard/userCard";
 import Header from "../../components/header";
 import { useContext } from "react";

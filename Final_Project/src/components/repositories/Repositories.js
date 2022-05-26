@@ -1,4 +1,4 @@
-import styles from "./Repositories.module.css"
+import * as styles from "./Repositories.module.css"
 function Repositories({ name, stars, fork, url }) {
 
   return (

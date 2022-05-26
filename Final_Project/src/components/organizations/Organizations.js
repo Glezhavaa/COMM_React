@@ -1,4 +1,4 @@
-import styles from "./Organizations.module.css";
+import * as styles from "./Organizations.module.css";
 
 function Organizations({orgImg, orgName}) {
   return (

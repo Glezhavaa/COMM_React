@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import ROUTES from "../../config/routes";
-import styles from "./SignInForm.module.css";
+import * as styles from "./SignInForm.module.css";
 
 function SignInForm() {
   const [username, setUsername] = useState("");

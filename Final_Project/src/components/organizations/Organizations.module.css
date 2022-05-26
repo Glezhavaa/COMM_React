@@ -1,3 +1,7 @@
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
 .content {
     margin: 0 0.5rem;
     text-align: center;

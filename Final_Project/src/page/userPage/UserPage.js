@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/header";
 import ROUTES from "../../config/routes";
-import styles from "./UserPage.module.css";
+import * as styles from "./UserPage.module.css";
 import Organizations from "../../components/organizations/Organizations";
 import { useEffect, useState } from "react";
 import Repositories from "../../components/repositories/Repositories";

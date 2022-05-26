@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import UserCard from "../userCard/userCard";
-import styles from "./Search.module.css";
+import * as styles from "./Search.module.css";
 
 function SearchComponent() {
   const [value, setValue] = useState("");
