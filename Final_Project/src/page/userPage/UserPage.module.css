@@ -25,13 +25,19 @@
 
 .userImg {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 .userImg img {
     height: 15rem;
     width: 15rem;
     border-radius: 15rem;
+    margin-bottom: 1rem;
+}
+
+.userImg .btn {
+    width: 15rem;
     margin-bottom: 1rem;
 }
 

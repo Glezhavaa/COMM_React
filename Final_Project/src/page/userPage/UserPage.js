@@ -3,8 +3,9 @@ import Header from "../../components/header";
 import ROUTES from "../../config/routes";
 import * as styles from "./UserPage.module.css";
 import Organizations from "../../components/organizations/Organizations";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Repositories from "../../components/repositories/Repositories";
+import { UserContext } from "../../context/UserContext";
 
 const GIT_TOKEN = process.env.REACT_APP_GIT_TOKEN;
 
@@ -20,6 +21,16 @@ function UserPage() {
   const [orgError, setOrgError] = useState("");
   const [repoLoading, setRepoLoading] = useState(false);
   const [repoError, setRepoError] = useState("");
+  const { setFavorites } = useContext(UserContext);
+
+  function addHandler() {
+    setFavorites((prev) => {
+      return [
+        ...prev,
+        { uid: prev.length + 1, username: user.login, img: user.avatar_url },
+      ];
+    });
+  }
 
   useEffect(() => {
     setUserLoading(true);
@@ -91,7 +102,11 @@ function UserPage() {
             <div className={styles.user}>
               <div className={styles.userImg}>
                 <img src={user.avatar_url} alt="user img" />
+                <button className={styles.btn} onClick={addHandler}>
+                  Add/Remove To Favorites{" "}
+                </button>
               </div>
+
               <div className={styles.bio}>
                 <h3>
                   Name: <span>{name.toUpperCase()}</span>

@@ -7,6 +7,7 @@ function UserContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [perPage, setPerPage] = useState(20);
+  const [favorites, setFavorites] = useState([]);
   const GIT_USER_API = `https://api.github.com/search/users?q=followers:%3E=1000&per_page=${perPage}`;
   const GIT_TOKEN = process.env.REACT_APP_GIT_TOKEN;
 
@@ -14,7 +15,7 @@ function UserContextProvider({ children }) {
     setLoading(true);
     fetch(GIT_USER_API, {
       headers: {
-        "Authorization": `token ${GIT_TOKEN}`,
+        Authorization: `token ${GIT_TOKEN}`,
       },
     })
       .then((response) => {
@@ -30,7 +31,7 @@ function UserContextProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{ gitUsers, loading, error, perPage, setPerPage }}
+      value={{ gitUsers, loading, error, perPage, setPerPage, favorites, setFavorites }}
     >
       {children}
     </UserContext.Provider>
